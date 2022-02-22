@@ -7,7 +7,7 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "node app.js",
 		"lint": "eslint app.js",
-		"prepare": "husky install"
+		"prepare": "npx husky install"
 	},
 	"engines": {
 		"node": "14"
@@ -17,6 +17,7 @@
 	"devDependencies": {
 		"eslint": "^8.9.0",
 		"eslint-config-recommended": "^4.1.0",
+		"eslint-plugin-prettier": "^4.0.0",
 		"husky": "^4.3.8",
 		"prettier": "^2.5.1"
 	}
