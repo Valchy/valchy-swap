@@ -1,4 +1,8 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+eval "$(fnm env --use-on-cd)"
+
+fnm use 14
+
 npm run lint
