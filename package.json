@@ -1,15 +1,21 @@
 {
-  "name": "valeri-modern-web-3.0-tools",
-  "version": "1.0.0",
-  "description": "A university project to demonstrate modern web application tools and web 3.0",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js"
-  },
-  "engines": {
-    "node": "14"
-  },
-  "author": "Valeri Sabev",
-  "license": "ISC"
+	"name": "valeri-modern-web-3.0-tools",
+	"version": "1.0.0",
+	"description": "A university project to demonstrate modern web application tools and web 3.0",
+	"main": "app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node app.js",
+		"lint": "eslint app.js"
+	},
+	"engines": {
+		"node": "14"
+	},
+	"author": "Valeri Sabev",
+	"license": "ISC",
+	"devDependencies": {
+		"eslint": "^8.9.0",
+		"eslint-config-recommended": "^4.1.0",
+		"prettier": "^2.5.1"
+	}
 }

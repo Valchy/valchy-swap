@@ -1,0 +1,12 @@
+{
+	"$schema": "http://json.schemastore.org/eslintrc",
+	"rules": {
+		"no-unused-vars": "error"
+	},
+	"extends": "eslint:recommended",
+	"root": true,
+	"env": {
+		"browser": true,
+		"es6": true
+	}
+}
