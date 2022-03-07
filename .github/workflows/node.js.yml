@@ -1,4 +1,4 @@
-name: Lint and Build Application
+name: Lint Application
 
 # Controls when the action will run. 
 on:
