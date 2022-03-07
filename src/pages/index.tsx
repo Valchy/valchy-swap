@@ -2,6 +2,8 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 
+import MyLink from '../components/Link';
+
 const Home: NextPage = () => {
 	return (
 		<div className="flex min-h-screen flex-col items-center justify-center py-2">
@@ -23,6 +25,12 @@ const Home: NextPage = () => {
 					<code className="rounded-md bg-gray-100 p-3 font-mono text-lg">
 						pages/index.tsx
 					</code>
+					<MyLink
+						id="test-link"
+						text="test me"
+						href="/about"
+						openInNewTab={false}
+					/>
 				</p>
 
 				<div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
