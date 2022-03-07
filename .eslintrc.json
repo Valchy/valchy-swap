@@ -4,13 +4,9 @@
 		"browser": true,
 		"es2021": true
 	},
-	"extends": ["eslint:recommended"],
+	"extends": ["next/core-web-vitals", "prettier"],
 	"parserOptions": {
 		"ecmaVersion": "latest",
 		"sourceType": "module"
-	},
-	"plugins": ["prettier"],
-	"rules": {
-		"prettier/prettier": "error"
 	}
 }
