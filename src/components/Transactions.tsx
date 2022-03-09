@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Transactions = () => {
-	return <div>No transactions...</div>;
+	return <center>No transactions...</center>;
 };
 
 export default Transactions;

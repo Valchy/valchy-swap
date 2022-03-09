@@ -34,7 +34,7 @@ const Header = props => {
 	return (
 		<section className={style.wrapper}>
 			<Link href="/">
-				<a className={style.headerLogo}>
+				<a className={style.headerLogo} onClick={() => props.setSelectedNav('swap')}>
 					<Image
 						src={uniswapLogo}
 						alt="uniswap"

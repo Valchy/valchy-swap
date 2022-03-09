@@ -12,12 +12,14 @@ const style = {
 
 const Home: NextPage = () => {
 	const router = useRouter();
-	const [selectedNav, setSelectedNav] = useState<string>('swap');
+	const [selectedNav, setSelectedNav] = useState<string>('');
 
 	useEffect(() => {
-		console.log(router.query);
-		if (router.query.nav) setSelectedNav(router.query.nav);
-	}, [router.query.counter]);
+		const urlParams = new URL(window.location.href).searchParams;
+		const nav = urlParams.get('nav');
+
+		setSelectedNav(nav ? nav : 'swap');
+	}, []);
 
 	return (
 		<>
@@ -30,7 +32,7 @@ const Home: NextPage = () => {
 				<Header selectedNav={selectedNav} setSelectedNav={setSelectedNav} />
 
 				{/* Main section of app => "sawp" or "Transactions" */}
-				<Main selectedNav={selectedNav} />
+				{selectedNav && <Main selectedNav={selectedNav} />}
 
 				{/* Real-time chat with logged in meta mask users */}
 				<Chat />
