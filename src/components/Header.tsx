@@ -2,7 +2,6 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { FiArrowUpRight } from 'react-icons/fi';
 import { AiOutlineDown } from 'react-icons/ai';
-import { HiOutlineDotsVertical } from 'react-icons/hi';
 import { TiThMenu } from 'react-icons/ti';
 import ethLogo from '../../public/assets/eth.png';
 import uniswapLogo from '../../public/assets/uniswap.png';
