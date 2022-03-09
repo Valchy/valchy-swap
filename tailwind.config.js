@@ -7,6 +7,7 @@ module.exports = {
 				lightGrey: '#343434',
 				veryLightGrey: '#D0D0D0',
 				calltoactionBlue: '#476FFF',
+				accentBlue: '#3A60E4',
 				placeholderColor: '#AFAFAF'
 			}
 		}
