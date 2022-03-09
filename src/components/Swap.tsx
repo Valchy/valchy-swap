@@ -16,35 +16,26 @@ const style = {
 const Swap = () => {
 	return (
 		<div className={style.wrapper}>
-			<div className={style.inputsWrapper}>
-				<input placeholder="0.0" className={style.currencyInput}></input>
-				<div className={style.currencyBtn}>
-					<Image
-						src={ethLogo}
-						alt="Ethereum logo"
-						width={20}
-						height={20}
-						layout="fixed"
-					/>
-					<span className="mx-2">ETH</span>
-					<AiOutlineDown />
-				</div>
-			</div>
-			<div className={style.inputsWrapper}>
-				<input placeholder="0x..." className={style.currencyInput}></input>
-				<div className={style.currencyBtn}>
-					<Image
-						src={bnbLogo}
-						alt="Ethereum logo"
-						width={20}
-						height={20}
-						layout="fixed"
-					/>
-					<span className="mx-2">BNB</span>
-					<AiOutlineDown />
-				</div>
-			</div>
+			{[
+				{ logo: ethLogo, abbriviation: 'ETH', placeholder: '0.0' },
+				{ logo: bnbLogo, abbriviation: 'BNB', placeholder: '0x...' }
+			].map(props => (
+				<SwapInput {...props} key={`swap-input-${props.abbriviation}`} />
+			))}
 			<button className={style.confirmButton}>Confirm</button>
+		</div>
+	);
+};
+
+const SwapInput = props => {
+	return (
+		<div className={style.inputsWrapper}>
+			<input placeholder={props.placeholder} className={style.currencyInput}></input>
+			<div className={style.currencyBtn}>
+				<Image src={props.logo} alt="Ethereum logo" width={20} height={20} layout="fixed" />
+				<span className="mx-2">{props.abbriviation}</span>
+				<AiOutlineDown />
+			</div>
 		</div>
 	);
 };
