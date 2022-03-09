@@ -2,7 +2,6 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Header from '../components/Header';
-// import { bgColors } from '../styles/colors'; // why does it not work?
 
 const style = {
 	wrapper: `h-screen max-h-screen h-min-screen w-screen font-sansation bg-gradient-to-b from-indigo-900 via-purple-900 to-pink-900 text-white select-none flex flex-col`
