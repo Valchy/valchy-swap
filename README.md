@@ -10,7 +10,7 @@ A university project to demonstrate modern web application tools and web 3.0
 
 #### Storybook
 
-[https://storybook.swap.valchy/](https://storybook.swap.valchy/)
+[https://storybook.swap.valchy.com/](https://storybook.swap.valchy.com/)
 
 ## GitHub Actions
 
