@@ -9,7 +9,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 
 const style = {
-	wrapper: 'flex items-center justify-between mt-6 px-4 md:px-6 lg:px-10',
+	wrapper: 'select-none flex items-center justify-between mt-6 px-4 md:px-6 lg:px-10',
 	headerLogo: 'flex lg:flex-1 items-center group',
 	headerLogoText: 'uppercase text-xl hidden sm:block',
 	nav: 'flex justify-center flex-1 lg:relative absolute bottom-10 lg:bottom-0 left-1/2 lg:left-0 -translate-x-1/2 lg:translate-x-0',

@@ -7,7 +7,7 @@ import Header from '../components/Header';
 import Main from '../components/Main';
 
 const style = {
-	wrapper: `h-screen max-h-screen h-min-screen w-screen bg-gradient-to-b from-indigo-900 via-purple-900 to-pink-900 text-white select-none flex flex-col`
+	wrapper: `h-screen max-h-screen h-min-screen w-screen bg-gradient-to-b from-indigo-900 via-purple-900 to-pink-900 text-white flex flex-col`
 };
 
 const Home: NextPage = () => {
