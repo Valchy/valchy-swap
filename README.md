@@ -2,9 +2,15 @@
 
 A university project to demonstrate modern web application tools and web 3.0
 
-## Storybook
+## Links
 
-Storybook link: [https://valchy-swap-storybook.vercel.app/](https://valchy-swap-storybook.vercel.app/)
+#### Main App
+
+[https://swap.valchy.com/](https://swap.valchy.com/)
+
+#### Storybook
+
+[https://valchy-swap-storybook.vercel.app/](https://valchy-swap-storybook.vercel.app/)
 
 ## GitHub Actions
 
