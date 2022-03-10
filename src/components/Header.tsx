@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Image from 'next/image';
 import { FiArrowUpRight } from 'react-icons/fi';
 import { AiOutlineDown } from 'react-icons/ai';
@@ -7,6 +7,7 @@ import ethLogo from '../../public/assets/eth.png';
 import uniswapLogo from '../../public/assets/uniswap.png';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import { TransactionContext } from '../context/TransactionContext';
 
 const style = {
 	wrapper: 'select-none flex items-center justify-between mt-6 px-4 md:px-6 lg:px-10',
@@ -25,10 +26,8 @@ const style = {
 		'flex items-center justify-center bg-darkGrey py-2 px-3 rounded-full ml-4 cursor-pointer w-[40px] h-[40px]'
 };
 
-const connectWallte = () => {};
-
 const Header = props => {
-	const [userWallet, setUserWallet] = useState<string>('Connect Wallet');
+	const { connectWallet, currentAccount } = useContext(TransactionContext);
 
 	return (
 		<section className={style.wrapper}>
@@ -56,13 +55,16 @@ const Header = props => {
 					))}
 					<Link href="https://valerisabev.com">
 						<a target="_blank" className={style.navItem}>
-							Charts <FiArrowUpRight />
+							Charts <FiArrowUpRight title="link arrow" />
 						</a>
 					</Link>
 				</div>
 			</nav>
 			<div className={style.headerMenu}>
-				<div className={style.headerMenuItemNetwork}>
+				<div
+					className={style.headerMenuItemNetwork}
+					onClick={() => window.alert('Sorry, only Ethereum is available')}
+				>
 					<Image
 						src={ethLogo}
 						alt="Ethereum logo"
@@ -71,15 +73,20 @@ const Header = props => {
 						layout="fixed"
 					/>
 					<span className="ml-2 hidden sm:block">Ethereum</span>
-					<AiOutlineDown className="ml-2" />
+					<AiOutlineDown className="ml-2" title="arrow down" />
 				</div>
-				<div className={style.headerMenuItemWallet} onClick={connectWallte}>
+				<div className={style.headerMenuItemWallet} onClick={() => connectWallet()}>
 					<span className="rounded-2xl px-2 py-1 duration-200 ease-linear hover:bg-lightGrey">
-						{userWallet}
+						{currentAccount
+							? `${currentAccount.substr(0, 6)}...${currentAccount.substr(
+									currentAccount.length - 5,
+									currentAccount.length
+							  )}`
+							: 'Connect Wallet'}
 					</span>
 				</div>
 				<div className={style.headerMenuItemBurger}>
-					<TiThMenu />
+					<TiThMenu title="burger menu icon" />
 				</div>
 			</div>
 		</section>

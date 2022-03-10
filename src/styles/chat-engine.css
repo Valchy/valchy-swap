@@ -1,0 +1,27 @@
+.ce-wrapper * {
+	color: #fff !important;
+	background-color: #212121 !important;
+}
+
+.ce-wrapper,
+.ce-chat-feed-column,
+.ce-chat-feed,
+.ce-chat-title {
+	background-color: #212121 !important;
+}
+
+.ce-chat-feed-container {
+	max-height: 380px !important;
+}
+
+.ce-chat-feed-column {
+	width: 100% !important;
+	flex: 1 !important;
+	max-width: 100% !important;
+	max-height: 380px !important;
+}
+
+.ce-chat-list-column,
+.ce-settings-column {
+	display: none;
+}

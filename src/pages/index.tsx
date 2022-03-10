@@ -1,18 +1,19 @@
 import type { NextPage } from 'next';
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Chat from '../components/Chat';
 import PageHead from '../components/Head';
 import Header from '../components/Header';
 import Main from '../components/Main';
+import { TransactionContext } from '../context/TransactionContext';
+import { ChatProvider } from '../context/ChatContext.js';
 
 const style = {
 	wrapper: `h-screen max-h-screen h-min-screen w-screen bg-gradient-to-b from-indigo-900 via-purple-900 to-pink-900 text-white flex flex-col`
 };
 
 const Home: NextPage = () => {
-	const router = useRouter();
 	const [selectedNav, setSelectedNav] = useState<string>('');
+	const { currentAccount } = useContext(TransactionContext);
 
 	useEffect(() => {
 		const urlParams = new URL(window.location.href).searchParams;
@@ -35,7 +36,11 @@ const Home: NextPage = () => {
 				{selectedNav && <Main selectedNav={selectedNav} />}
 
 				{/* Real-time chat with logged in meta mask users */}
-				<Chat />
+				{/* {currentAccount && (
+					<ChatProvider>
+						<Chat />
+					</ChatProvider>
+				)} */}
 			</div>
 		</>
 	);

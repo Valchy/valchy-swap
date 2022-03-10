@@ -2,9 +2,15 @@
 	font-family: 'Sansation Regular';
 	font-style: normal;
 	font-weight: 400;
-	src: local('Sansation Regular'), local('Sansation-Regular'), url(../../public/fonts/sansation-regular.woff) format('woff'), url(../../public/fonts/sansation-regular.ttf) format('truetype');
+	src: local('Sansation Regular'), local('Sansation-Regular'),
+		url(../../public/fonts/sansation-regular.woff) format('woff'),
+		url(../../public/fonts/sansation-regular.ttf) format('truetype');
 }
 
 * {
 	font-family: 'Sansation Regular', arial !important;
 }
+
+/* ::-webkit-scrollbar {
+	width: 0;
+} */
