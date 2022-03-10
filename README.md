@@ -10,11 +10,11 @@ A university project to demonstrate modern web application tools and web 3.0
 
 #### Storybook
 
+[https://storybook.swap.valchy.com/](https://storybook.swap.valchy.com/)
+
 #### Sanity
 
 [sanity.swap.valchy.com](sanity.swap.valchy.com)
-
-[https://storybook.swap.valchy.com/](https://storybook.swap.valchy.com/)
 
 ## GitHub Actions
 
