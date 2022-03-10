@@ -85,9 +85,9 @@ const Header = props => {
 							: 'Connect Wallet'}
 					</span>
 				</div>
-				<div className={style.headerMenuItemBurger}>
+				{/* <div className={style.headerMenuItemBurger}>
 					<TiThMenu title="burger menu icon" />
-				</div>
+				</div> */}
 			</div>
 		</section>
 	);
