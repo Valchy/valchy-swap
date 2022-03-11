@@ -18,18 +18,18 @@ A university project to demonstrate my first web 3.0 app. Basically you can send
 
 ## Tech Stack
 
--   \> Next.js
-    \> React
-    \> Tailwind
-    \> Solidity
-    \> Metamask
-    \> Hardhat
-    \> Sanity
-    \> Storybook
-    \> Cypress / Jest
-    \> Husky / Github Actions
-    \> ESLint / Prettier
-    \> (typescript)
+-   Next.js
+-   React
+-   Tailwind
+-   Solidity
+-   Metamask
+-   Hardhat
+-   Sanity
+-   Storybook
+-   Cypress / Jest
+-   Husky / Github Actions
+-   ESLint / Prettier
+-   (typescript)
 
 ## GitHub Actions
 
