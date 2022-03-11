@@ -1,15 +1,31 @@
 describe('Navigation', () => {
-	it('should navigate to the next.js page', () => {
-		// Start from the index page
+	it('should return 404 if page does not exist', () => {
+		// Go to a 404 page
+		cy.request({
+			url: 'http://localhost:3000/super-long-page-title-will-never-exist',
+			failOnStatusCode: false
+		})
+			.its('status')
+			.should('equal', 404);
+		cy.visit('http://localhost:3000/super-long-page-title-will-never-exist', {
+			failOnStatusCode: false
+		});
+	});
+
+	it('should go to my personal website', () => {
+		// Go on main app
 		cy.visit('http://localhost:3000/');
 
-		// Find a link with an href attribute containing "about" and click it
-		cy.get('#test-link').click();
+		// Test if link exists
+		cy.get('#test-id-about-me').should('not.be.empty');
 
-		// The new url should include "/about"
-		cy.url().should('include', '/about');
+		// Click "about me" link (remove attribute target to properly test)
+		// cy.get('#test-id-about-me').invoke('removeAttr', 'target').click();
 
-		// The new page should be a 404 page
-		cy.get('h1').contains('404');
+		// The new url should be my personal website
+		// cy.url().should('eq', 'https://valerisabev.com/');
+
+		// Test if a h1 element exists
+		// cy.get('#home').should('not.be.empty');
 	});
 });

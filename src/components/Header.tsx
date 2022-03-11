@@ -56,7 +56,7 @@ const Header = props => {
 						/>
 					))}
 					<Link href="https://valerisabev.com">
-						<a target="_blank" className={style.navItem}>
+						<a id="test-id-about-me" target="_blank" className={style.navItem}>
 							About me <FiArrowUpRight title="link arrow" />
 						</a>
 					</Link>
