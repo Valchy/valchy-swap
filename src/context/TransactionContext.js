@@ -41,6 +41,22 @@ export const TransactionProvider = ({ children }) => {
 		checkIfWalletIsConnected();
 	}, []);
 
+	// Create user profile sanity
+	useEffect(() => {
+		if (!currentAccount) return;
+
+		(async () => {
+			const userDoc = {
+				_type: 'users',
+				_id: currentAccount,
+				userName: 'Unnamed',
+				address: currentAccount
+			};
+
+			await client.createIfNotExists(userDoc);
+		})();
+	}, [currentAccount]);
+
 	// Prompts metamask wallet login
 	const connectWallet = async (metamask = window.ethereum) => {
 		try {
@@ -116,6 +132,7 @@ export const TransactionProvider = ({ children }) => {
 			// DB save transaction as blockchain databases are super slow
 			await saveTransaction(transactionHash.hash, amount, currentAccount, addressTo);
 			setIsTransactionProcessing(false);
+			alert.show('Successful Transaction!');
 		} catch (err) {
 			console.error(err);
 			alert.show('Error! Transactionn not sent');
@@ -135,12 +152,12 @@ export const TransactionProvider = ({ children }) => {
 			amount: parseFloat(amount)
 		};
 
+		// Save data to sanity DB
 		await client.createIfNotExists(transactionDoc);
-
 		await client
 			.patch(currentAccount)
 			.setIfMissing({ transactions: [] })
-			.insert('after', 'transactions[-1', [
+			.insert('after', 'transactions[-1]', [
 				{
 					_key: transactionHash,
 					_ref: transactionHash,

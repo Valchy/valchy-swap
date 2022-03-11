@@ -7,22 +7,23 @@
 	width: 100vw;
 	height: 100vh;
 	display: flex;
+	justify-content: center;
 	align-content: center;
 	flex-direction: column;
 }
 
 .spinner-bg {
-	background-color: rgba(230, 230, 230, 0.9);
+	background-color: rgba(230, 230, 230, 0.95);
 	padding: 20px;
 	width: 240px;
 	height: fit-content;
 	border-radius: 10px;
 	align-self: center;
-	position: relative;
-	top: 190px;
+	/* position: relative;
+	top: 190px; */
 }
 
-@media (max-height: 450px) {
+/* @media (max-height: 450px) {
 	.spinner-container {
 		justify-content: center;
 	}
@@ -30,7 +31,7 @@
 	.spinner-bg {
 		top: auto;
 	}
-}
+} */
 
 .spinner-container p {
 	text-align: center;
