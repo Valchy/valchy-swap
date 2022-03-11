@@ -6,6 +6,7 @@ A university project to demonstrate my first web 3.0 app. Basically you can send
 
 1. Install all the packages with `yarn`
 2. Run `yarn dev` for development or `yarn build` for production
+3. `cd` into smart_contracts and run `yarn deploy`
 
 ## Links
 
