@@ -49,6 +49,7 @@ const SwapInput = props => {
 				value={props.formData[props.name]}
 				placeholder={props.placeholder}
 				className={style.currencyInput}
+				style={!props.abbriviation ? { width: '100%' } : {}}
 			></input>
 			{props.abbriviation && (
 				<div
