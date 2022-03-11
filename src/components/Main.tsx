@@ -1,7 +1,7 @@
 import React from 'react';
 import { IoMdSettings } from 'react-icons/io';
 import Swap from './Swap';
-import Transactions from './Transactions';
+import TransactionHistory from './TransactionHistory';
 
 const style = {
 	wrapper: 'mt-14 mx-6 flex justify-center',
@@ -18,7 +18,7 @@ const Main = props => {
 					<h1 className={style.title}>{props.selectedNav}</h1>
 					{/* <IoMdSettings size={22} style={{ cursor: 'pointer' }} title="settings icon" /> */}
 				</div>
-				{props.selectedNav === 'transactions' ? <Transactions /> : <Swap />}
+				{props.selectedNav === 'transactions' ? <TransactionHistory /> : <Swap />}
 			</div>
 		</div>
 	);
