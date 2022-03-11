@@ -26,7 +26,7 @@ jobs:
               uses: actions/setup-node@v2
               with:
                   node-version: ${{ matrix.node-version }}
-            - name: yarn install and lint
+            - name: yarn install and lint + prettier
               run: |
                   yarn install --frozen-lockfile
                   yarn lint
