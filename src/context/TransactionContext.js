@@ -1,9 +1,13 @@
 import { useState, useEffect, createContext } from 'react';
 import { contractABI, contractAddress } from '../../lib/constants';
 import { ethers } from 'ethers';
+import { client } from '../../lib/sanityClient';
+import { useAlert } from 'react-alert';
 
-const alertNeedForMetamaskInstallation = () =>
-	window.alert('Please install the metamask browser extension');
+const alertNeedForMetamaskInstallation = () => {
+	const alert = useAlert();
+	alert.show('Please install the metamask browser extension');
+};
 
 export const TransactionContext = createContext();
 
@@ -17,7 +21,8 @@ const getEthereumContract = () => {
 
 export const TransactionProvider = ({ children }) => {
 	const [currentAccount, setCurrentAccount] = useState();
-	const [isLoading, setIsLoading] = useState(false);
+	const [isTransactionProcessing, setIsTransactionProcessing] = useState(false);
+	const alert = useAlert();
 	const [formData, setFormData] = useState({
 		addressTo: '',
 		amount: ''
@@ -46,7 +51,7 @@ export const TransactionProvider = ({ children }) => {
 				if (!navigator.clipboard) fallbackCopyTextToClipboard(currentAccount);
 				else navigator.clipboard.writeText(currentAccount);
 
-				return window.alert('Address copied to clipboard');
+				return alert.show('Address copied to clipboard');
 			}
 
 			const accounts = await metamask.request({ method: 'eth_requestAccounts' });
@@ -82,7 +87,7 @@ export const TransactionProvider = ({ children }) => {
 
 			// Error handling
 			if (addressTo === currentAccount)
-				return window.alert('Error! Cannot transfer to the same address');
+				return alert.show('Error! Cannot transfer to the same address');
 
 			const parsedAmount = ethers.utils.parseEther(amount);
 
@@ -105,16 +110,46 @@ export const TransactionProvider = ({ children }) => {
 				'TRANSFER'
 			);
 
-			setIsLoading(true);
+			setIsTransactionProcessing(true);
 			await transactionHash.wait();
 
-			// DB
-			// await saveTransaction(transactionHash.hash, amount, currentAccount, addressTo);
-			setIsLoading(false);
+			// DB save transaction as blockchain databases are super slow
+			await saveTransaction(transactionHash.hash, amount, currentAccount, addressTo);
+			setIsTransactionProcessing(false);
 		} catch (err) {
 			console.error(err);
-			window.alert('Error! Transactionn not sent');
+			alert.show('Error! Transactionn not sent');
+			setIsTransactionProcessing(false);
 		}
+	};
+
+	// Save transaction in sanity DB
+	const saveTransaction = async (transactionHash, amount, fromAddress, toAddress) => {
+		const transactionDoc = {
+			_type: 'transactions',
+			_id: transactionHash,
+			fromAddress: fromAddress,
+			toAddress: toAddress,
+			timestamp: new Date(Date.now()).toISOString(),
+			txHash: transactionHash,
+			amount: parseFloat(amount)
+		};
+
+		await client.createIfNotExists(transactionDoc);
+
+		await client
+			.patch(currentAccount)
+			.setIfMissing({ transactions: [] })
+			.insert('after', 'transactions[-1', [
+				{
+					_key: transactionHash,
+					_ref: transactionHash,
+					_type: 'reference'
+				}
+			])
+			.commit();
+
+		return;
 	};
 
 	// Handle input chnage
@@ -130,7 +165,7 @@ export const TransactionProvider = ({ children }) => {
 		// Error handling
 		if (!addressTo || !amount) {
 			console.log(`Address to: ${addressTo}`, `Ammount: ${amount}`);
-			return window.alert('Error! Missing input fields');
+			return alert.show('Error! Missing input fields');
 		}
 
 		sendTransaction();
@@ -143,7 +178,7 @@ export const TransactionProvider = ({ children }) => {
 				formData,
 				currentAccount,
 				connectWallet,
-				isLoading,
+				isTransactionProcessing,
 				handleChange,
 				handleSubmit
 			}}

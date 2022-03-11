@@ -8,6 +8,7 @@ import uniswapLogo from '../../public/assets/uniswap.png';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { TransactionContext } from '../context/TransactionContext';
+import { useAlert } from 'react-alert';
 
 const style = {
 	wrapper: 'select-none flex items-center justify-between mt-6 px-4 md:px-6 lg:px-10',
@@ -28,6 +29,7 @@ const style = {
 
 const Header = props => {
 	const { connectWallet, currentAccount } = useContext(TransactionContext);
+	const alert = useAlert();
 
 	return (
 		<section className={style.wrapper}>
@@ -63,7 +65,7 @@ const Header = props => {
 			<div className={style.headerMenu}>
 				<div
 					className={style.headerMenuItemNetwork}
-					onClick={() => window.alert('Sorry, only Ethereum is available')}
+					onClick={() => alert.show('Sorry, only Ethereum is available')}
 				>
 					<Image
 						src={ethLogo}

@@ -4,6 +4,7 @@ import ethLogo from '../../public/assets/eth.png';
 import bnbLogo from '../../public/assets/bnb.png';
 import { useContext } from 'react';
 import { TransactionContext } from '../context/TransactionContext';
+import { useAlert } from 'react-alert';
 
 const style = {
 	wrapper: 'flex flex-col',
@@ -39,6 +40,8 @@ const Swap = () => {
 };
 
 const SwapInput = props => {
+	const alert = useAlert();
+
 	return (
 		<div className={style.inputsWrapper}>
 			<input
@@ -50,7 +53,7 @@ const SwapInput = props => {
 			{props.abbriviation && (
 				<div
 					className={style.currencyBtn}
-					onClick={() => window.alert('Sorry, only ETH is available')}
+					onClick={() => alert.show('Sorry, only ETH is available')}
 				>
 					<Image
 						src={props.logo}

@@ -30,7 +30,7 @@ const Chat = () => {
 					<h1 className={style.title}>Real-time Chat</h1>
 				</div> */}
 				{/* {showChat && username.length && password.length && ( */}
-				<ChatEngine
+				{/* <ChatEngine
 					height="100%"
 					projectID="77379345-2810-4e0f-abc1-1d2902da253d"
 					userName={username}
@@ -39,7 +39,7 @@ const Chat = () => {
 					renderChatList={() => {}}
 					renderChatSettings={() => {}}
 				/>
-				{/* )} */}
+				*/}
 			</div>
 		</div>
 	);
