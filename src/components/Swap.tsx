@@ -13,8 +13,7 @@ const style = {
 	currencyInput: 'bg-lightGrey w-[80%] outline-none mr-4 text-lg',
 	currencyBtn: 'flex items-center bg-darkGrey rounded-2xl p-2 min-w-[100px] cursor-pointer',
 	confirmButton:
-		'bg-calltoactionBlue w-full cursor-pointer rounded-2xl p-3 hover:bg-accentBlue ease-linear duration-300',
-	swapCurrenciedBtn: 'absolute left-1/2 -translate-x-1/2 -mt-[16px]'
+		'bg-calltoactionBlue w-full cursor-pointer rounded-2xl p-3 hover:bg-accentBlue ease-linear duration-300'
 };
 
 const Swap = () => {
