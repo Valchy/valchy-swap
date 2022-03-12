@@ -17,19 +17,20 @@ const style = {
 };
 
 const Swap = () => {
-	const { formData, handleChange, handleSubmit } = useContext(TransactionContext);
+	const { formData, handleChange, handleSubmit, accountBalance } = useContext(TransactionContext);
 
 	return (
 		<form onSubmit={handleSubmit} className={style.wrapper}>
 			{[
-				{ name: 'amount', logo: ethLogo, abbriviation: 'ETH', placeholder: '0.0' },
-				{ name: 'addressTo', logo: bnbLogo, abbriviation: '', placeholder: '0x...' }
+				{ name: 'amount', logo: ethLogo, abbreviation: 'ETH', placeholder: '0.0' },
+				{ name: 'addressTo', logo: bnbLogo, abbreviation: '', placeholder: '0x...' }
 			].map(props => (
 				<SwapInput
 					{...props}
 					handleChange={handleChange}
 					formData={formData}
-					key={`swap-input-${props.abbriviation}`}
+					accountBalance={accountBalance}
+					key={`swap-input-${props.abbreviation}`}
 				/>
 			))}
 			<button type="submit" className={style.confirmButton}>
@@ -44,14 +45,17 @@ const SwapInput = props => {
 
 	return (
 		<div className={style.inputsWrapper}>
-			<input
-				onChange={e => props.handleChange(e, props.name)}
-				value={props.formData[props.name]}
-				placeholder={props.placeholder}
-				className={style.currencyInput}
-				style={!props.abbriviation ? { width: '100%' } : {}}
-			></input>
-			{props.abbriviation && (
+			<div className="flex flex-col">
+				<input
+					onChange={e => props.handleChange(e, props.name)}
+					value={props.formData[props.name]}
+					placeholder={props.placeholder}
+					className={style.currencyInput}
+					style={!props.abbreviation ? { width: '100%' } : {}}
+				></input>
+				{props.abbreviation && <span> {props.accountBalance} </span>}
+			</div>
+			{props.abbreviation && (
 				<div
 					className={style.currencyBtn}
 					onClick={() => alert.show('Sorry, only ETH is available')}
@@ -63,7 +67,7 @@ const SwapInput = props => {
 						height={20}
 						layout="fixed"
 					/>
-					<span className="mx-2">{props.abbriviation}</span>
+					<span className="mx-2">{props.abbreviation}</span>
 					<AiOutlineDown title="arrow down" />
 				</div>
 			)}

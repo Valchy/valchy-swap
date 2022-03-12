@@ -21,6 +21,7 @@ const getEthereumContract = () => {
 
 export const TransactionProvider = ({ children }) => {
 	const [currentAccount, setCurrentAccount] = useState();
+	const [accountBalance, setAccountBalance] = useState(0);
 	const [isTransactionProcessing, setIsTransactionProcessing] = useState(false);
 	const alert = useAlert();
 	const [formData, setFormData] = useState({
@@ -31,7 +32,7 @@ export const TransactionProvider = ({ children }) => {
 	// On load function
 	useEffect(() => {
 		// Detect Metamask account change
-		if (typeof window !== 'undefined') {
+		if (typeof window.ethereum !== 'undefined') {
 			if (window.ethereum) {
 				window.ethereum.on('accountsChanged', accounts => setCurrentAccount(accounts[0]));
 			}
@@ -54,6 +55,10 @@ export const TransactionProvider = ({ children }) => {
 			};
 
 			await client.createIfNotExists(userDoc);
+
+			if (typeof window.ethereum !== 'undefined' && currentAccount) {
+				setAccountBalance(window.ethereum.getBalance(currentAccount));
+			}
 		})();
 	}, [currentAccount]);
 
@@ -197,7 +202,8 @@ export const TransactionProvider = ({ children }) => {
 				connectWallet,
 				isTransactionProcessing,
 				handleChange,
-				handleSubmit
+				handleSubmit,
+				accountBalance
 			}}
 		>
 			{children}
