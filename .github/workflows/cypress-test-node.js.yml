@@ -1,0 +1,26 @@
+name: Cypress Tests
+
+# Controls when the action will run.
+on: ['push', 'pull_request']
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+	build_test:
+		# The type of runner that the job will run on
+		runs-on: ubuntu-latest
+
+		strategy:
+			matrix:
+				node-version: [14.x]
+
+		# Steps represent a sequence of tasks that will be executed as part of the job
+		steps:
+			- name: Use Node.js ${{ matrix.node-version }}
+			  uses: actions/setup-node@v2
+			  with:
+				  node-version: ${{ matrix.node-version }}
+			- name: yarn install and test
+			  run: |
+				  yarn install --frozen-lockfile
+          yarn build
+				  yarn cypress:test
