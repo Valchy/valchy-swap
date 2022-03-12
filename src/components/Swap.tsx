@@ -8,7 +8,8 @@ import { useAlert } from 'react-alert';
 
 const style = {
 	wrapper: 'flex flex-col',
-	inputsWrapper: 'flex bg-lightGrey w-full outline-none px-4 py-6 sm:py-4 rounded-2xl mb-3',
+	inputsWrapper:
+		'flex justify-between bg-lightGrey w-full outline-none px-4 py-6 sm:py-4 rounded-2xl mb-3',
 	currencyInput: 'bg-lightGrey w-[80%] outline-none mr-4 text-lg',
 	currencyBtn: 'flex items-center bg-darkGrey rounded-2xl p-2 min-w-[100px] cursor-pointer',
 	confirmButton:
@@ -53,7 +54,11 @@ const SwapInput = props => {
 					className={style.currencyInput}
 					style={!props.abbreviation ? { width: '100%' } : {}}
 				></input>
-				{props.abbreviation && <span> {props.accountBalance} </span>}
+				{props.abbreviation && (
+					<span>
+						Balance: <span className="text-slate-400">{props.accountBalance}</span>
+					</span>
+				)}
 			</div>
 			{props.abbreviation && (
 				<div
