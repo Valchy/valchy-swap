@@ -1,1 +1,5 @@
-{}
+{
+	"env": {
+		"baseUrl": "https://swap.valchy.com"
+	}
+}

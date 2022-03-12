@@ -2,19 +2,19 @@ describe('Navigation', () => {
 	it('should return 404 if page does not exist', () => {
 		// Go to a 404 page
 		cy.request({
-			url: 'http://localhost:3000/super-long-page-title-will-never-exist',
+			url: `${Cypress.env('baseUrl')}/super-long-page-title-will-never-exist`,
 			failOnStatusCode: false
 		})
 			.its('status')
 			.should('equal', 404);
-		cy.visit('http://localhost:3000/super-long-page-title-will-never-exist', {
+		cy.visit(`${Cypress.env('baseUrl')}/super-long-page-title-will-never-exist`, {
 			failOnStatusCode: false
 		});
 	});
 
 	it('should go to my personal website', () => {
 		// Go on main app
-		cy.visit('http://localhost:3000/');
+		cy.visit(`${Cypress.env('baseUrl')}/`);
 
 		// Test if link exists
 		cy.get('#test-id-about-me').should('not.be.empty');
