@@ -19,8 +19,12 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
+          
+      - name: Installing packages
+        run: yarn install --frozen-lockfile
+        
+      - name: Build for linting
+        run: yarn build
+        
       - name: Lint + prettier Application
-        run: |
-          yarn install --frozen-lockfile
-          yarn build
-          yarn lint
+        run: yarn lint
