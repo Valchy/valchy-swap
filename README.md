@@ -6,15 +6,25 @@ You can get test eth from [here](https://faucets.chain.link/rinkeby).
 
 ## Before Installing
 
-Before starting the installation process make sure to install [fnm](https://github.com/Schniz/fnm) so that husky works properly and the correct node js version gets used. As well as that make sure to create an account in [sanity](https://www.sanity.io/cleverprogrammer), [alchemy.io](https://dashboard.alchemyapi.io/) and [metamask](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en).
+Before starting the installation process make sure to install [fnm](https://github.com/Schniz/fnm) so that husky works properly. As well as that make sure to create an account in [sanity](https://www.sanity.io), [alchemy.io](https://dashboard.alchemyapi.io/) and [metamask](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en).
 
-In addition to this, please follow all the `.env.example` instructions inside the `main folder` and the `smart_contract` one. Create the appropriate projects and get the respective API keys and IDs.
+In addition to this, please follow all the `.env.example` instructions inside the files. Create the appropriate projects and get the respective API keys and IDs.
 
 ## Installation
 
-1. Install all the packages with `yarn` inside the `main folder`, `smart_contract` and `studio`
+##### Main App
+1. Install everything in the `main folder` (root directory) by  
+	running `yarn install` to get all the packages  
+	then `yarn dev` for starting the development server
+	or `yarn build` for building production files
+
+##### Sanity Backend
+2. `cd` into the `studio` directory  
+	then `yarn install`
+
+Install all the packages with `yarn` inside the `main folder`, `smart_contract` and `studio`
 2. Run `yarn dev` for development or `yarn build` for production in main folder
-3. `cd` into `smart_contract` and run `sanity init`
+3. `cd` into `smart_contract` and run `sanity init --coupon cleverprogrammer`
 4. The run run `yarn compile` then `yarn deploy`
 5. `cd` into `studio` and run `yarn start` for development or `yarn build` for production
 
