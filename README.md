@@ -33,7 +33,8 @@ You can get test ETH from [here](https://faucets.chain.link/rinkeby) to your met
     ##### Additional Scripts
 
     - `yarn lint` to lint and prettify your code base
-    - `yarn cypress` to test your code base
+    - `yarn cypress` to test your code base  
+      -> make sure to have the correct url base set in the `cypress.json` file when running cypress tests.
 
 #### Storybook Frontend Components UI
 
