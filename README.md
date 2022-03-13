@@ -26,7 +26,7 @@ A university project to demonstrate my first web 3.0 app. Basically you can send
 -   `Metamask` to send crypto from one wallet address to another
 -   `Hardhat` to deploy our smart contract on a test ethereum network
 -   `Sanity` for the database and admin panel of the app
--   `Cypress` / `Jest` for e2e and unit testing
+-   `Cypress` for e2e, integration and unit testing
 -   `ESLint` / `Prettier` to lint and maintain code rules throughout the app
 -   `Husky` / `Github Actions` to perform automatic pre-commit and after each commit tests
 -   (`typescript`) a little touch of typescript here and there
