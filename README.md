@@ -8,7 +8,7 @@ You can get test eth from [here](https://faucets.chain.link/rinkeby).
 
 Before starting the installation process make sure to install [fnm](https://github.com/Schniz/fnm) so that husky works properly and the correct node js version gets used. As well as that make sure to create an account in [sanity](https://www.sanity.io/cleverprogrammer), [alchemy.io](https://dashboard.alchemyapi.io/) and [metamask](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en).
 
-In addition to this, please follow all the `.env.example` instructions inside the files. Create the appropriate projects and get the respective API keys and IDs.
+In addition to this, please follow all the `.env.example` instructions inside the `main folder` and the `smart_contract` one. Create the appropriate projects and get the respective API keys and IDs.
 
 ## Installation
 
