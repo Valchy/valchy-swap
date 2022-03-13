@@ -1,5 +1,8 @@
 # valchy-swap
 
+[![Cypress Tests](https://github.com/Valchy/valchy-swap/actions/workflows/cypress-tests.js.yml/badge.svg)](https://github.com/Valchy/valchy-swap/actions/workflows/cypress-tests.js.yml)
+[![Lint + Prettier Application](https://github.com/Valchy/valchy-swap/actions/workflows/lint-prettier.js.yml/badge.svg)](https://github.com/Valchy/valchy-swap/actions/workflows/lint-prettier.js.yml)
+
 A university project to demonstrate my first web 3.0 app. It allows you to send test ETH from one crypto wallet to another using the [metamask](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en) chrome extension. Everything works on the [rinkeby](https://www.rinkeby.io/) ethereum test network and is deployed using [hardhat](https://hardhat.org/).
 
 You can get test eth from [here](https://faucets.chain.link/rinkeby).
@@ -56,23 +59,28 @@ A lot of the installation below is dependant on correct `.env` file configuratio
 
 ## Tech Stack
 
+#### Backend
+
 -   `Next.js` as the server
+-   `Sanity` for the database and admin panel of the app
+
+#### Frontend
+
 -   `React` for the frontend
 -   `Tailwind` for the frontend styling
 -   `Storybook` for developing react UI components
+
+#### Blockchain and Smart Contracts
+
 -   `Solidity` for smart contracts on the ethereum blockchain network
 -   `Metamask` to send crypto from one wallet address to another
 -   `Hardhat` to deploy our smart contract on a test ethereum network
--   `Sanity` for the database and admin panel of the app
+
+#### Testing and Linting
+
 -   `Cypress` for e2e, integration and unit testing
 -   `ESLint` / `Prettier` to lint and maintain code rules throughout the app
 -   `Husky` / `Github Actions` to perform automatic pre-commit and after each commit tests
 -   (`typescript`) a little touch of typescript here and there
 
-## GitHub Actions
-
-[![Cypress Tests](https://github.com/Valchy/valchy-swap/actions/workflows/cypress-tests.js.yml/badge.svg)](https://github.com/Valchy/valchy-swap/actions/workflows/cypress-tests.js.yml)
-
-[![Lint + Prettier Application](https://github.com/Valchy/valchy-swap/actions/workflows/lint-prettier.js.yml/badge.svg)](https://github.com/Valchy/valchy-swap/actions/workflows/lint-prettier.js.yml)
-
-Happy Hacking :)
+### Happy Hacking :)
