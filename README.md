@@ -1,6 +1,14 @@
 # valchy-swap
 
-A university project to demonstrate my first web 3.0 app. Basically you can send test ETH from one crypto wallet to another. Everything works on the Rinkeby ethereum test network. You can get test eth from [here](https://faucets.chain.link/rinkeby). Also make sure to have the metamask chrome extension installed and have two different accounts to which you can send crypto to.
+A university project to demonstrate my first web 3.0 app. Basically you can send test ETH from one crypto wallet to another using the [metamask](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en) chrome extension. Everything works on the Rinkeby ethereum test network.
+
+You can get test eth from [here](https://faucets.chain.link/rinkeby).
+
+## Before Installing
+
+Before starting the installation process make sure to install [fnm](https://github.com/Schniz/fnm) so that husky works properly. As well as that make sure to create an account in [sanity](https://www.sanity.io/cleverprogrammer), [alchemy.io](https://dashboard.alchemyapi.io/) and [metamask](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en).
+
+In addition to this, please follow all the `.env.example` instructions inside the files. Create the appropriate projects and get the respective API keys and IDs.
 
 ## Installation
 
