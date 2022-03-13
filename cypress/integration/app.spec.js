@@ -36,6 +36,9 @@ describe('Navigation', () => {
 		// Test if transactions button exists
 		cy.get('#nav-test-id-transactions').should('not.be.empty');
 
+		// Should be on main page
+		cy.url().should('not.include', '/?nav=transactions');
+
 		// Click button (should change url)
 		cy.get('#nav-test-id-transactions').click();
 
