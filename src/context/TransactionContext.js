@@ -56,9 +56,6 @@ export const TransactionProvider = ({ children }) => {
 				const web3 = new Web3(window.ethereum);
 
 				try {
-					// Request account access
-					await window.ethereum.enable();
-
 					web3.eth.getBalance(currentAccount, (error, balanceInWei) => {
 						if (error) {
 							console.error(error);

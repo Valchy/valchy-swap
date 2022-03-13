@@ -45,7 +45,7 @@ const SwapInput = props => {
 
 	return (
 		<div className={style.inputsWrapper}>
-			<div className="flex flex-col">
+			<div className="flex w-full flex-col">
 				<input
 					onChange={e => props.handleChange(e, props.name)}
 					value={props.formData[props.name]}
