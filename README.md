@@ -19,7 +19,7 @@ In addition to this, please follow all the `.env.example` instructions inside th
 
 ### Important
 
-You can get test ETH from [here](https://faucets.chain.link/rinkeby) to your meta mask wallets.
+You can get test ETH to your meta mask wallets from [here](https://faucets.chain.link/rinkeby)!
 
 ## Installations
 
@@ -30,11 +30,11 @@ You can get test ETH from [here](https://faucets.chain.link/rinkeby) to your met
 3. then `yarn dev` for starting the development server  
    or `yarn build` for building production files
 
-    ##### Additional Scripts
+##### Additional Scripts
 
-    - `yarn lint` to lint and prettify your code base
-    - `yarn cypress` to test your code base  
-      -> make sure to have the correct url base set in the `cypress.json` file when running cypress tests.
+-   `yarn lint` to lint and prettify your code base
+-   `yarn cypress` to test your code base  
+    -> make sure to have the correct url base set in the `cypress.json` file when running cypress tests.
 
 #### Storybook Frontend Components UI
 
