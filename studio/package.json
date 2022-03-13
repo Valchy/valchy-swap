@@ -6,7 +6,7 @@
 	"author": "Valeri Sabev",
 	"license": "ISC",
 	"scripts": {
-		"init": "sanity init --coupon cleverprogrammer",
+		"sanity-init": "sanity init --coupon cleverprogrammer",
 		"start": "sanity start",
 		"build": "sanity build public -y"
 	},
