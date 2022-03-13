@@ -41,8 +41,8 @@ In addition to this, please follow all the `.env.example` instructions inside th
 
 ## GitHub Actions
 
-[![Cypress Tests](https://github.com/Valchy/valchy-swap/actions/workflows/cypress-test-node.js.yml/badge.svg)](https://github.com/Valchy/valchy-swap/actions/workflows/cypress-test-node.js.yml)
+[![Cypress Tests](https://github.com/Valchy/valchy-swap/actions/workflows/cypress-tests.js.yml/badge.svg)](https://github.com/Valchy/valchy-swap/actions/workflows/cypress-tests.js.yml)
 
-[![Lint + Prettier Application](https://github.com/Valchy/valchy-swap/actions/workflows/lint-prettier-node.js.yml/badge.svg)](https://github.com/Valchy/valchy-swap/actions/workflows/lint-prettier-node.js.yml)
+[![Lint + Prettier Application](https://github.com/Valchy/valchy-swap/actions/workflows/lint-prettier.js.yml/badge.svg)](https://github.com/Valchy/valchy-swap/actions/workflows/lint-prettier.js.yml)
 
 Happy Hacking :)
