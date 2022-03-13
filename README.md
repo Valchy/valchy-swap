@@ -10,23 +10,43 @@ Before starting the installation process make sure to install [fnm](https://gith
 
 In addition to this, please follow all the `.env.example` instructions inside the files. Create the appropriate projects and get the respective API keys and IDs.
 
+A lot of the installation below is dependant on correct `.env` file configurations in each folder with the `.env.example` file.
+
 ## Installation
 
-##### Main App
-1. Install everything in the `main folder` (root directory) by  
-	running `yarn install` to get all the packages  
-	then `yarn dev` for starting the development server
-	or `yarn build` for building production files
+#### Main App - valchy-swap
 
-##### Sanity Backend
-2. `cd` into the `studio` directory  
-	then `yarn install`
+1. Install everything in the `main folder` (root directory) by
+2. running `yarn install` to get all the packages
+3. then `yarn dev` for starting the development server  
+   or `yarn build` for building production files
 
-Install all the packages with `yarn` inside the `main folder`, `smart_contract` and `studio`
-2. Run `yarn dev` for development or `yarn build` for production in main folder
-3. `cd` into `smart_contract` and run `sanity init --coupon cleverprogrammer`
-4. The run run `yarn compile` then `yarn deploy`
-5. `cd` into `studio` and run `yarn start` for development or `yarn build` for production
+    ##### Additional Scripts
+
+    - `yarn lint` to lint and prettify your code base
+    - `yarn cypress` to test your code base
+
+#### Storybook Frontend Components UI
+
+1. After having `yarn install` within the `main folder`
+2. run `yarn storybook` for the development environment
+3. or `yarn storybook-build` to build the production static files
+
+#### Sanity Backend
+
+1. `cd` into the `studio` directory
+2. then `yarn install` to get all the packages
+3. and `yarn init` to init sanity backend (with promo boosted account)
+4. finally `yarn dev` for starting the development server  
+   or `yarn build` for building the production static files
+
+#### Smart Contract
+
+1. `cd` into the `smart_contract` directory
+2. then `yarn install` to get all the packages
+3. do `yarn compile` to compile the smart contract and
+4. finally `yarn deploy` to deploy the smart contract on a real blockchain network  
+   on the [rinkeby](https://www.rinkeby.io/) ethereum test network using [hardhat](https://hardhat.org/)
 
 ## Links
 

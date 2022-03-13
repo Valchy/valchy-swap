@@ -1,14 +1,13 @@
 {
 	"name": "valchy-swap-sanity",
-	"private": true,
 	"version": "1.0.0",
-	"description": "",
+	"description": "Sanity backend for valchy.swap",
 	"main": "package.json",
-	"author": "Valeri Sabev <valchygaming@gmail.com>",
-	"license": "UNLICENSED",
+	"author": "Valeri Sabev",
+	"license": "ISC",
 	"scripts": {
+		"init": "sanity init --coupon cleverprogrammer",
 		"start": "sanity start",
-		"test": "sanity check",
 		"build": "sanity build public -y"
 	},
 	"keywords": [
