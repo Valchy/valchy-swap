@@ -26,8 +26,5 @@ jobs:
       - name: Installing packages
         run: yarn install --frozen-lockfile
         
-      - name: Build for linting
-        run: yarn build
-        
       - name: Lint + prettier Application
         run: yarn lint
