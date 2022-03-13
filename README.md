@@ -1,6 +1,6 @@
 # valchy-swap
 
-A university project to demonstrate my first web 3.0 app. Basically you can send test ETH from one crypto wallet to another using the [metamask](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en) chrome extension. Everything works on the Rinkeby ethereum test network.
+A university project to demonstrate my first web 3.0 app. It allows you to send test ETH from one crypto wallet to another using the [metamask](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en) chrome extension. Everything works on the [rinkeby](https://www.rinkeby.io/) ethereum test network and is deployed using [hardhat](https://hardhat.org/).
 
 You can get test eth from [here](https://faucets.chain.link/rinkeby).
 
