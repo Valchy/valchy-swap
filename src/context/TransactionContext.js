@@ -3,11 +3,7 @@ import { contractABI, contractAddress } from '../../lib/constants';
 import { ethers } from 'ethers';
 import { client } from '../../lib/sanityClient';
 import { useAlert } from 'react-alert';
-
-const alertNeedForMetamaskInstallation = () => {
-	const alert = useAlert();
-	alert.show('Please install the metamask browser extension');
-};
+import Web3 from 'web3';
 
 export const TransactionContext = createContext();
 
@@ -57,7 +53,24 @@ export const TransactionProvider = ({ children }) => {
 			await client.createIfNotExists(userDoc);
 
 			if (typeof window.ethereum !== 'undefined' && currentAccount) {
-				setAccountBalance(window.ethereum.getBalance(currentAccount));
+				const web3 = new Web3(window.ethereum);
+
+				try {
+					// Request account access
+					await window.ethereum.enable();
+
+					web3.eth.getBalance(currentAccount, (error, balanceInWei) => {
+						if (error) {
+							console.error(error);
+						} else {
+							// 1 ETH is 1000000000000000000 Wei
+							setAccountBalance((balanceInWei / 1000000000000000000).toFixed(3));
+						}
+					});
+				} catch (e) {
+					// User denied access
+					return console.error('Denied Access :/');
+				}
 			}
 		})();
 	}, [currentAccount]);
@@ -65,7 +78,7 @@ export const TransactionProvider = ({ children }) => {
 	// Prompts metamask wallet login
 	const connectWallet = async (metamask = window.ethereum) => {
 		try {
-			if (!metamask) return alertNeedForMetamaskInstallation();
+			if (!metamask) return alert.show('Please install the metamask browser extension');
 
 			// Copy address to clip board if already connected
 			if (currentAccount) {
@@ -101,7 +114,7 @@ export const TransactionProvider = ({ children }) => {
 	// Send transaction from .env wallet to given address
 	const sendTransaction = async (metamask = window.ethereum) => {
 		try {
-			if (!metamask) return alertNeedForMetamaskInstallation();
+			if (!metamask) return alert.show('Please install the metamask browser extension');
 
 			const { addressTo, amount } = formData;
 			const transactionContract = getEthereumContract();
