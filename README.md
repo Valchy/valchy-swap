@@ -5,19 +5,25 @@
 
 A university project to demonstrate my first web 3.0 app. It allows you to send test ETH from one crypto wallet to another using the [metamask](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en) chrome extension. Everything works on the [rinkeby](https://www.rinkeby.io/) ethereum test network and is deployed using [hardhat](https://hardhat.org/).
 
-You can get test eth from [here](https://faucets.chain.link/rinkeby).
+## Links
+
+-   Main App [https://swap.valchy.com/](https://swap.valchy.com/)
+-   Storybook [https://storybook.swap.valchy.com/](https://storybook.swap.valchy.com/)
+-   Sanity [https://sanity.swap.valchy.com](https://sanity.swap.valchy.com)
 
 ## Before Installing
 
 Before starting the installation process make sure to install [fnm](https://github.com/Schniz/fnm) so that husky works properly. As well as that make sure to create an account in [sanity](https://www.sanity.io), [alchemy.io](https://dashboard.alchemyapi.io/) and [metamask](https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en).
 
-In addition to this, please follow all the `.env.example` instructions inside the files. Create the appropriate projects and get the respective API keys and IDs.
+In addition to this, please follow all the `.env.example` instructions inside the files. Create the appropriate projects and get the respective API keys and IDs. A lot of the installation below is dependant on correct `.env` file configurations. For each `.env.example` file please create a corresponding `.env` file.
 
-A lot of the installation below is dependant on correct `.env` file configurations in each folder with the `.env.example` file.
+### Important
 
-## Installation
+You can get test ETH from [here](https://faucets.chain.link/rinkeby) to your meta mask wallets.
 
-#### Main App - valchy-swap
+## Installations
+
+#### Main App Frontend
 
 1. Install everything in the `main folder` (root directory) by
 2. running `yarn install` to get all the packages
@@ -50,12 +56,6 @@ A lot of the installation below is dependant on correct `.env` file configuratio
 3. do `yarn compile` to compile the smart contract and
 4. finally `yarn deploy` to deploy the smart contract on a real blockchain network  
    on the [rinkeby](https://www.rinkeby.io/) ethereum test network using [hardhat](https://hardhat.org/)
-
-## Links
-
--   Main App [https://swap.valchy.com/](https://swap.valchy.com/)
--   Storybook [https://storybook.swap.valchy.com/](https://storybook.swap.valchy.com/)
--   Sanity [https://sanity.swap.valchy.com](https://sanity.swap.valchy.com)
 
 ## Tech Stack
 
