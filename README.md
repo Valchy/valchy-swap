@@ -25,14 +25,15 @@ You can get test ETH to your meta mask wallets from [here](https://faucets.chain
 
 #### Main App Frontend
 
-1. Install everything in the `main folder` (root directory) by
-2. running `yarn install` to get all the packages
+1. `cd` in the `main folder` (root directory) and
+2. run `yarn install` to get all the packages
 3. then `yarn dev` for starting the development server  
    or `yarn build` for building production files
 
 ##### Additional Scripts
 
--   `yarn lint` to lint and prettify your code base
+-   `yarn lint` to lint and prettify your code base  
+    -> likewise run `yarn lint --fix` to fix linting and prettier errors
 -   `yarn cypress` to test your code base  
     -> make sure to have the correct url base set in the `cypress.json` file when running cypress tests.
 
