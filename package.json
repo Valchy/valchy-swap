@@ -9,6 +9,7 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
+		"lint-fix": "next lint --fix",
 		"test": "cypress open",
 		"cypress": "cypress open",
 		"cypress:headless": "cypress run",

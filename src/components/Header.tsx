@@ -104,6 +104,7 @@ const NavItem = props => {
 
 	return (
 		<span
+			id={`nav-test-id-${props.label}`}
 			onClick={navClickHandler}
 			className={`${style.navItem} ${
 				props.selectedNav === props.label ? style.activeNavItem : ''

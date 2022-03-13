@@ -28,4 +28,17 @@ describe('Navigation', () => {
 		// Test if a h1 element exists
 		// cy.get('#home').should('not.be.empty');
 	});
+
+	it('should change to transactions UI after click', () => {
+		// Go on main app
+		cy.visit(`${Cypress.env('baseUrl')}/`);
+
+		// Test if transactions button exists
+		cy.get('#nav-test-id-transactions').should('not.be.empty');
+
+		// Click button (should change url)
+		cy.get('#nav-test-id-transactions').click();
+
+		cy.url().should('include', '/?nav=transactions');
+	});
 });

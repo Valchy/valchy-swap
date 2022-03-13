@@ -33,7 +33,7 @@ You can get test ETH to your meta mask wallets from [here](https://faucets.chain
 ##### Additional Scripts
 
 -   `yarn lint` to lint and prettify your code base  
-    -> likewise run `yarn lint --fix` to fix linting and prettier errors
+    -> likewise run `yarn lint-fix` to fix linting and prettier errors
 -   `yarn cypress` to test your code base  
     -> make sure to have the correct url base set in the `cypress.json` file when running cypress tests.
 
