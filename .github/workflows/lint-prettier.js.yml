@@ -23,6 +23,9 @@ jobs:
       - name: Installing packages
         run: yarn install --frozen-lockfile
         
+      - name: Setup work environment
+        uses: ./
+        
       - name: Build for linting
         run: yarn build
         
