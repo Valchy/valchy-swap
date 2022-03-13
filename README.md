@@ -47,7 +47,7 @@ You can get test ETH to your meta mask wallets from [here](https://faucets.chain
 
 1. `cd` into the `studio` directory
 2. then `yarn install` to get all the packages
-3. and `yarn sanity-init` to init sanity backend (with promo boosted account)  
+3. run `yarn sanity-init` to init sanity backend (with promo boosted account)  
    choose reconfigure configuration and go with the default one
 4. finally `yarn start` for starting the development server  
    or `yarn build` for building the production static files
