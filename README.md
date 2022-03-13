@@ -39,7 +39,7 @@ You can get test ETH to your meta mask wallets from [here](https://faucets.chain
 
 #### Storybook Frontend Components UI
 
-1. After having `yarn install` within the `main folder`
+1. `cd` in the `main folder` (root directory) and
 2. run `yarn storybook` for the development environment
 3. or `yarn storybook-build` to build the production static files
 
