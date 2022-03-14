@@ -7,7 +7,7 @@ import ethLogo from '../../public/assets/ethCurrency.png';
 import { FiArrowUpRight } from 'react-icons/fi';
 
 const style = {
-	wrapper: `h-full text-white select-none h-full w-screen flex-1 pt-14 flex items-end justify-end pb-12 overflow-scroll px-8`,
+	wrapper: `h-full text-white select-none h-full flex-1 flex flex-col items-end`,
 	txHistoryItem: `bg-[#191a1e] rounded-lg px-4 py-2 my-2 flex items-center justify-end`,
 	txDetails: `flex items-center`,
 	toAddress: `text-[#f48706] mx-2`,
@@ -23,26 +23,33 @@ const TransactionHistory = () => {
 		(async () => {
 			if (!isLoading && currentAccount) {
 				const query = `
-          *[_type=="users" && _id == "${currentAccount}"] {
-            "transactionList": transactions[]->{amount, toAddress, timestamp, txHash}|order(timestamp desc)[0..4]
-          }
-        `;
+					*[_type=="users"] {
+						"transactionList": transactions[]->{amount, toAddress, timestamp, txHash}|order(timestamp desc)
+					}
+				`;
 
-				const clientRes = await client.fetch(query);
+				// Get all transactions
+				const transactionListsData = await client.fetch(query);
+				const txList = [];
 
-				setTransactionHistory(clientRes[0].transactionList);
+				// Massage data into on array with all the transactions
+				transactionListsData.forEach(({ transactionList }) => {
+					if (transactionList) {
+						transactionList.forEach(tx => txList.push(tx));
+					}
+				});
+
+				setTransactionHistory(txList);
 			}
 		})();
 	}, [isLoading, currentAccount]);
 
-	return <div className="text-center">No transactions...</div>;
-
 	return (
 		<div className={style.wrapper}>
 			<div>
-				{transactionHistory &&
+				{transactionHistory ? (
 					transactionHistory?.map((transaction, index) => (
-						<div className={style.txHistoryItem} key={index}>
+						<div className={style.txHistoryItem} key={`transaction-item-${index}`}>
 							<div className={style.txDetails}>
 								<Image src={ethLogo} height={20} width={15} alt="eth" />
 								{transaction.amount} Ξ sent to{' '}
@@ -71,7 +78,10 @@ const TransactionHistory = () => {
 								</a>
 							</div>
 						</div>
-					))}
+					))
+				) : (
+					<div className="text-center">No transactions...</div>
+				)}
 			</div>
 		</div>
 	);
