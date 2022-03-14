@@ -18,7 +18,11 @@ const Main = props => {
 					<h1 className={style.title}>{props.selectedNav}</h1>
 					{/* <IoMdSettings size={22} style={{ cursor: 'pointer' }} title="settings icon" /> */}
 				</div>
-				{props.selectedNav === 'transactions' ? <TransactionHistory /> : <Swap />}
+				{props.selectedNav === 'transactions' ? (
+					<TransactionHistory selectedNav={props.selectedNav} />
+				) : (
+					<Swap />
+				)}
 			</div>
 		</div>
 	);

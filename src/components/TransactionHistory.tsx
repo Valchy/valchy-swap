@@ -15,7 +15,7 @@ const style = {
 	etherscanLink: `flex items-center text-[#2172e5]`
 };
 
-const TransactionHistory = () => {
+const TransactionHistory = props => {
 	const { isLoading, currentAccount } = useContext(TransactionContext);
 	const [transactionHistory, setTransactionHistory] = useState<any[]>([]);
 
@@ -42,7 +42,7 @@ const TransactionHistory = () => {
 				setTransactionHistory(txList);
 			}
 		})();
-	}, [isLoading, currentAccount]);
+	}, [isLoading, currentAccount, props.selectedNav]);
 
 	return (
 		<div className={style.wrapper}>

@@ -14,7 +14,7 @@ const style = {
 
 const Home: NextPage = () => {
 	const [selectedNav, setSelectedNav] = useState<string>('');
-	const { currentAccount, isTransactionProcessing } = useContext(TransactionContext);
+	const { isTransactionProcessing } = useContext(TransactionContext);
 
 	useEffect(() => {
 		const urlParams = new URL(window.location.href).searchParams;
