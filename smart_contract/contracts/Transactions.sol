@@ -10,3 +10,5 @@ contract Transactions {
 		emit Transfer(msg.sender, receiver, amount, message, block.timestamp, keyword);
 	}
 }
+
+// Try adding some sort of custom fee (eg send some wei to another third account)
